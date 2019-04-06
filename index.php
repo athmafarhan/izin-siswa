@@ -54,7 +54,9 @@ $query = "SELECT * FROM rekap_izin_siswa";
                             Rekap Izin Siswa
                         </div>
                         <div class="col-4" style="text-align: end">
-                            <button class="btn btn-primary"><i class="fas fa-plus"></i>&nbsp;&nbsp;<a href="new/" style="color: white">Input Baru</a></button>
+                            <a class="btn btn-primary" href="new/">
+                                <i class="fas fa-plus"></i>&nbsp;&nbsp;Input Baru
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -85,13 +87,20 @@ $query = "SELECT * FROM rekap_izin_siswa";
                                     $field6name = $row["izin.keperluan"];
 
                                     echo '<tr> 
-                                              <td>' . $field1name . '</td> 
-                                              <td>' . $field2name . '</td> 
-                                              <td>' . $field3name . '</td> 
-                                              <td>' . $field4name . '</td> 
-                                              <td>' . $field5name . '</td> 
-                                              <td>' . $field6name . '</td> 
-                                              <td><button class="btn btn-success" a href="edit'.$field1name.'">Edit</td>
+                                            <td>' . $field1name . '</td> 
+                                            <td>' . $field2name . '</td> 
+                                            <td>' . $field3name . '</td> 
+                                            <td>' . $field4name . '</td> 
+                                            <td>' . $field5name . '</td> 
+                                            <td>' . $field6name . '</td> 
+                                            <td>
+                                                <form action="edit/" method="POST">
+                                                </form>
+                                                <form action="edit/" method="POST">
+                                                    <input type="hidden" name="varname"  value="' . $field1name . '">
+                                                    <button type="submit" class="btn btn-success"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Edit</button>
+                                                </form>
+                                            </td>
                                           </tr>';
                                 }
                                 $result->free();
