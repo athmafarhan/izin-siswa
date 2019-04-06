@@ -1,3 +1,30 @@
+<?php
+$izin_nama = $_POST['inputIzinNama'];
+$izin_kelas = $_POST['inputIzinKelas'];
+$izin_guru = $_POST['inputIzinGuru'];
+$izin_keperluan = $_POST['inputIzinKeperluan'];
+$username = "root";
+$password = "";
+$database = "latihan";
+// echo $izin_id;
+$connect = new mysqli("localhost", $username, $password, $database);
+if ($connect) { } else {
+    echo "connection failed";
+    exit();
+}
+
+$query = 'INSERT INTO `rekap_izin_siswa`(`izin.nama`, `izin.kelas`, `izin.guru`, `izin.keperluan`) VALUES ("'.$izin_nama.'","'.$izin_kelas.'","'.$izin_guru.'","'.$izin_keperluan.'")';
+
+
+if (mysqli_query($connect,$query)==true) {
+    echo "berhasil";
+}
+else {
+    echo"gagal";
+}
+
+?>
+
 <!doctype html>
 <html lang="en">
 

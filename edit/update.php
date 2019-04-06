@@ -14,17 +14,16 @@ if ($connect) { } else {
     exit();
 }
 
-$query = 'UPDATE `rekap_izin_siswa` SET `izin.nama`="'.$izin_nama.'",`izin.kelas`="'.$izin_kelas.'",`izin.guru`="'.$izin_kelas.'",`izin.keperluan`="'.$izin_keperluan.'" WHERE `izin.id`='.$izin_id.'';
+$query = 'UPDATE `rekap_izin_siswa` SET `izin.nama`="'.$izin_nama.'",`izin.kelas`="'.$izin_kelas.'",`izin.guru`="'.$izin_guru.'",`izin.keperluan`="'.$izin_keperluan.'" WHERE `izin.id`='.$izin_id.'';
 echo $izin_id;
 echo $query;
 
 
-if (mysqli_query($connect,$query)) {
+if (mysqli_query($connect,$query)==true) {
     echo "berhasil";
-    mysqli_query($connect,$query);
 }
 else {
-    echo"test";
+    echo"gagal";
 }
 
 ?>

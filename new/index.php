@@ -31,7 +31,7 @@
             </div>
         </nav>
         <div style="padding-top: 15px; padding-bottom: 15px"></div>
-        <form>
+        <form action="insert.php" method="POST">
             <div class="card">
                 <div class="card-header">
                     Form Izin Siswa
@@ -42,7 +42,7 @@
                         <label for="inputNamaSiswa" class="col-sm-2 col-form-label">Nama Siswa</label>
                         <div class="col-sm-1">:</div>
                         <div class="col-sm-4">
-                            <input class="form-control" id="inputNamaSiswa" placeholder="Tulis Nama Siswa">
+                            <input class="form-control" id="inputIzinNama" name="inputIzinNama" placeholder="Tulis Nama Siswa">
                         </div>
                         <div class="col-sm-2"></div>
                     </div>
@@ -51,7 +51,7 @@
                         <label for="inputKelas" class="col-sm-2 col-form-label">Kelas</label>
                         <div class="col-sm-1">:</div>
                         <div class="col-sm-4">
-                            <select class="form-control" id="inputKelas">
+                            <select class="form-control" id="inputIzinKelas" name="inputIzinKelas">
                                 <option>Pilih Kelas</option>
                                 <option>X IPA 1</option>
                                 <option>X IPA 2</option>
@@ -65,7 +65,7 @@
                         <label for="inputGuru" class="col-sm-2 col-form-label">Guru Mengizinkan</label>
                         <div class="col-sm-1">:</div>
                         <div class="col-sm-4">
-                            <select class="form-control" id="inputGuru">
+                            <select class="form-control" id="inputIzinGuru" name="inputIzinGuru">
                                 <option>Pilih Guru</option>
                                 <option>Agus S</option>
                                 <option>Agus I</option>
@@ -79,7 +79,7 @@
                         <label for="inputKeperluan" class="col-sm-2 col-form-label">Keperluan</label>
                         <div class="col-sm-1">:</div>
                         <div class="col-sm-4">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
+                            <textarea class="form-control" id="inputIzinKeperluan" name="inputIzinKeperluan" rows="4"
                                 placeholder="Tulis Keperluan"></textarea>
                         </div>
                         <div class="col-sm-2"></div>
@@ -89,7 +89,7 @@
                         <div class="col-sm-2 col-form-label"></div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
-                            <button class="btn btn-primary">Simpan</button>
+                            <button type="submit" class="btn btn-primary">Simpan</button>
                         </div>
                         <div class="col-sm-2"></div>
                     </div>
