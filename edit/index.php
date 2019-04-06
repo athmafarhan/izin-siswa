@@ -1,5 +1,5 @@
 <?php
-$izin_id = $_POST['varname'];
+$izin_id = $_POST['izinId'];
 $username = "root";
 $password = "";
 $database = "latihan";
@@ -51,19 +51,20 @@ else {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="../">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Input</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Rekap</a>
+                        <a class="nav-link" href="../">Rekap</a>
                     </li>
                 </ul>
             </div>
         </nav>
         <div style="padding-top: 15px; padding-bottom: 15px"></div>
-        <form>
+        <form action="update.php" method="POST">
+            <input type="hidden" id="inputId" name="inputIzinId" value="<?php echo $izin_id ?>">
             <div class="card">
                 <div class="card-header">
                     Form Izin Siswa
@@ -74,7 +75,7 @@ else {
                         <label for="inputNamaSiswa" class="col-sm-2 col-form-label">Nama Siswa</label>
                         <div class="col-sm-1">:</div>
                         <div class="col-sm-4">
-                            <input class="form-control" id="inputNamaSiswa" placeholder="Tulis Nama Siswa" value="<?php echo $izin_nama ?>">
+                            <input class="form-control" id="inputIzinNama" name="inputIzinNama" placeholder="Tulis Nama Siswa" value="<?php echo $izin_nama ?>">
                         </div>
                         <div class="col-sm-2"></div>
                     </div>
@@ -83,7 +84,7 @@ else {
                         <label for="inputKelas" class="col-sm-2 col-form-label">Kelas</label>
                         <div class="col-sm-1">:</div>
                         <div class="col-sm-4">
-                            <select class="form-control" id="inputKelas">
+                            <select class="form-control" id="inputKelas" name="inputIzinKelas">
                                 <option>Pilih Kelas</option>
                                 <option value="X IPA 1" <?php echo $izin_kelas == 'X IPA 1' ? 'selected' : ''; ?>>X IPA 1</option>
                                 <option value="X IPA 2" <?php echo $izin_kelas == 'X IPA 2' ? 'selected' : ''; ?>>X IPA 2</option>
@@ -97,7 +98,7 @@ else {
                         <label for="inputGuru" class="col-sm-2 col-form-label">Guru Mengizinkan</label>
                         <div class="col-sm-1">:</div>
                         <div class="col-sm-4">
-                            <select class="form-control" id="inputGuru">
+                            <select class="form-control" id="inputGuru" name="inputIzinGuru">
                                 <option>Pilih Guru</option>
                                 <option value="Agus S" <?php echo $izin_guru == 'Agus S' ? 'selected' : ''; ?>>Agus S</option>
                                 <option value="Agus I" <?php echo $izin_guru == 'Agus I' ? 'selected' : ''; ?>>Agus I</option>
@@ -111,7 +112,7 @@ else {
                         <label for="inputKeperluan" class="col-sm-2 col-form-label">Keperluan</label>
                         <div class="col-sm-1">:</div>
                         <div class="col-sm-4">
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="4"
+                            <textarea class="form-control" id="inputIzinKeperluan" name="inputIzinKeperluan" rows="4"
                                 placeholder="Tulis Keperluan"><?php echo $izin_keperluan ?></textarea>
                         </div>
                         <div class="col-sm-2"></div>
@@ -121,8 +122,8 @@ else {
                         <div class="col-sm-2 col-form-label"></div>
                         <div class="col-sm-1"></div>
                         <div class="col-sm-4">
-                            <button class="btn btn-success">Simpan</button>
-                            <button class="btn btn-secondary">Batal</button>
+                            <button class="btn btn-success">Edit</button>
+                            <a class="btn btn-secondary" href="../">Batal</a>
                         </div>
                         <div class="col-sm-2"></div>
                     </div>

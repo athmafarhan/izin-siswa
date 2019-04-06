@@ -97,7 +97,7 @@ $query = "SELECT * FROM rekap_izin_siswa";
                                                 <form action="edit/" method="POST">
                                                 </form>
                                                 <form action="edit/" method="POST">
-                                                    <input type="hidden" name="varname"  value="' . $field1name . '">
+                                                    <input type="hidden" name="izinId"  value="' . $field1name . '">
                                                     <button type="submit" class="btn btn-success"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Edit</button>
                                                 </form>
                                             </td>
